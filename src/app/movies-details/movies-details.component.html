@@ -1,0 +1,23 @@
+<div class="row py-4">
+<div class="col-md-4">
+    <img class="w-100" [src]="imagePrefix+moviesDetails.poster_path" alt="">
+</div>
+
+<div class="col-md-8">
+    <h2>{{moviesDetails.original_title}}</h2>
+    <p class="py-3">{{moviesDetails.overview}}</p> 
+    <ul>
+        <li>Vote : {{moviesDetails.vote_average}}</li>
+        <li>Vote_count : {{moviesDetails.vote_count}}</li>
+
+        <li>Release_date : {{moviesDetails.release_date}}</li>
+        <li>Popularity : {{moviesDetails.popularity}}</li>
+        <li>Original_title : {{moviesDetails.original_title}}</li>
+
+
+    </ul>
+    
+</div>
+
+
+</div>

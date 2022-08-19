@@ -1,0 +1,24 @@
+<h2 class="py-2 text-center">login</h2>
+<div class="w-75 mx-auto">
+    <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+
+    <form (ngSubmit)="  SubmitloginForm(loginForm)" [formGroup]="loginForm" >
+       
+        <label for="email">email :</label>
+        <input type="email" formControlName="email" class="form-control my-2 ">
+        <div *ngIf="loginForm.get('email')?.errors &&loginForm.get('email')?.touched ">
+            <p *ngIf="loginForm.get('email')?.getError('required')"  class="alert alert-danger py-1">email is required</p>
+            <p *ngIf="loginForm.get('email')?.getError('email')"   class="alert alert-danger py-1">In-valid E-Mail formate</p>
+        </div>
+         <label for="password">password :</label>
+        <input type="password" formControlName="password" class="form-control my-2 ">
+        <div *ngIf="loginForm.get('password')?.errors &&loginForm.get('password')?.touched ">
+            <p *ngIf="loginForm.get('password')?.getError('required')"  class="alert alert-danger py-1">password is required</p>
+        </div> 
+        <button  [disabled]="loginForm.invalid" type="submit"  class=" btn fw-bold btn-info">
+            <span *ngIf="isloading"><i class="fas fa-spinner fa-spin"></i></span>
+            <span *ngIf=" !isloading">login</span>
+        </button>
+    </form>
+</div>
+

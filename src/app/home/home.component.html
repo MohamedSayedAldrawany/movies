@@ -1,0 +1,82 @@
+<div class="my-4">
+    <owl-carousel-o [options]="customOptions">
+
+        <ng-container *ngFor="let movie of trendingMovies">
+            <ng-template carouselSlide [id]="movie.id">
+                <img [src]="imagePrefix+movie.poster_path">
+            </ng-template>
+        </ng-container>
+
+    </owl-carousel-o>
+</div>
+
+<div class="row py-3">
+    <div class="col-md-4 d-flex align-items-center">
+        <div>
+            <div class="brd w-25 mb-4"></div>
+            <h2>Trednding <br>Movies <br>To Watch Right Now</h2>
+            <p class="text-muted">Most Watched Movies By Day</p>
+            <div class="brd w-100 mt-4"></div>
+        </div>
+
+
+    </div>
+    <div *ngFor="let movie of trendingMovies" class="col-md-2">
+        <div class="movie trending_title position-relative my-2 overflow-hidden">
+            <a [routerLink]="['/moviesdetails',movie.id]">
+                <img class="w-100" [src]="imagePrefix+movie.poster_path" alt="">
+                <div
+                    class="inner position-absolute w-100 h-100 d-flex justify-content-center align-items-center text-center  ">
+                    <h3 class="h5 mx-2 fw-bold">{{movie.title | watch }}</h3>
+
+                </div>
+                <!-- <p class="text-muted pt-2">{{movie.overview|seemore:40}}</p> -->
+
+            </a>
+
+        </div>
+    </div>
+</div>
+<div class="row py-3">
+    <div class="col-md-4 d-flex align-items-center">
+        <div>
+            <div class="brd w-25 mb-4"></div>
+            <h2>Trednding <br>Tv <br>To Watch Right Now</h2>
+            <p class="text-muted">Most Watched Tv By Day</p>
+            <div class="brd w-100 mt-4"></div>
+        </div>
+
+
+    </div>
+
+    <div *ngFor="let tv of trendingtv" class="col-md-2">
+        <div class="tv trending_title position-relative my-2 overflow-hidden">
+            <img class="w-100" [src]="imagePrefix+tv.poster_path" alt="">
+            <div
+                class="inner position-absolute w-100 h-100 d-flex justify-content-center align-items-center text-center  ">
+                <h3 class="h5 my-2">{{tv.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row py-3">
+    <div class="col-md-4 d-flex align-items-center">
+        <div>
+            <div class="brd w-25 mb-4"></div>
+            <h2>Trednding <br>Pepole <br>To Watch Right Now</h2>
+            <p class="text-muted">Most Watched Pepole By Day</p>
+            <div class="brd w-100 mt-4"></div>
+        </div>
+
+
+    </div>
+    <div *ngFor="let person of trendingpeople" class="col-md-2">
+        <div class="person trending_title my-2 position-relative overflow-hidden">
+            <img class="w-100" [src]="person.profile_path" alt="">
+            <div
+                class="inner position-absolute w-100 h-100 d-flex justify-content-center align-items-center text-center">
+                <h3 class="h6 my-2">{{person.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

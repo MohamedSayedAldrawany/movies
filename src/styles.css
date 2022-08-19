@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat+Alternates&family=Poppins:ital,wght@0,100;0,300;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,500&family=Source+Sans+Pro:wght@200;400&family=Whisper&display=swap');
+
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color:rgba(0, 0, 0, 0.953);
+    color: white;
+}
+input{
+    background-color: transparent !important;
+    color: white !important;
+}
+input:focus{
+    border: none !important;
+}
+.brd{
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.299);
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover{
+    color: #fff;
+}
+.inner{
+    left: 0;
+    top:   100%;
+    background-color:rgba(0, 128, 0, 0.539);
+    transition: top 1s;
+    
+}
+.trending_title:hover .inner{
+    top: 0;
+}
+
+.page-item:active{
+    color: red !important;
+
+}
+.page-link:hover{
+color: red;
+}
+.cursor-pointer
+{
+    cursor: pointer;
+}
+
+
